@@ -31,6 +31,8 @@ jobs:
         run: npm run build --workspace frontend
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
+      - name: Verify Vite artifact
+        run: test -f frontend/dist/index.html
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
