@@ -32,6 +32,8 @@ jobs:
 
       - name: Build React frontend
         run: npm run build --workspace frontend
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
 
       - name: Verify compiled app
         run: test -f frontend/dist/index.html

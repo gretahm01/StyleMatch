@@ -33,6 +33,14 @@ describe('API base', () => {
     expect(response.headers['access-control-allow-origin']).toBe('https://gretahm01.github.io');
   });
 
+  it('does not allow an unrecognized CORS origin', async () => {
+    const response = await request(app)
+      .options('/api/health')
+      .set('Origin', 'https://untrusted.example')
+      .set('Access-Control-Request-Method', 'GET');
+    expect(response.headers['access-control-allow-origin']).toBeUndefined();
+  });
+
   it('validates analyze uploads before reaching the model', async () => {
     const missing = await request(app).post('/api/analyze').field('category', 'fashion');
     const invalid = await request(app).post('/api/analyze').field('category', 'fashion').field('occasion', 'casual').attach('image', Buffer.from('not an image'), { filename: 'archivo.jpg', contentType: 'image/jpeg' });

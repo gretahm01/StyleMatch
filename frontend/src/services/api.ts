@@ -1,6 +1,6 @@
 import type { ApiHealth } from '../types/api';
 
-const configuredApiUrl = import.meta.env.VITE_API_URL?.trim().replace(/\/+$/, '');
+const configuredApiUrl = import.meta.env.VITE_API_URL?.trim().replace(/\/+$/, '').replace(/\/api$/i, '');
 
 export function apiUrl(path: string): string {
   if (/^https?:\/\//i.test(path)) return path;
