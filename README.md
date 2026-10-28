@@ -59,11 +59,11 @@ Campos clave de un producto verificado:
 
 La interfaz ofrece presupuesto mínimo/máximo en MXN. El backend solo devuelve artículos con precio conocido dentro del rango; si no hay tres, la UI lo comunica. Cada precio y disponibilidad verificada muestra su fecha y advierte que puede cambiar.
 
-## Cinco casos de presentación y reporte
+## Cinco casos de presentación
 
 En el formulario principal hay cinco presets: **Moda casual**, **Moda elegante**, **Moda de color llamativo**, **Habitación minimalista** y **Espacio acogedor o moderno**. Al elegir uno se prepara categoría, ocasión y presupuesto; después carga una fotografía real proporcionada por ti y pulsa **Analizar mi estilo**. Elegir el caso no envía ninguna imagen ni inventa análisis.
 
-Tras un resultado, usa **Guardar este resultado** para registrar categoría, ocasión, presupuesto, perfil local, modo (DEMO o Gemini real), análisis, recomendaciones, puntuaciones y tu evaluación manual. No se guarda la fotografía. **Exportar reportes JSON** descarga los resultados de ese perfil, con su modo claramente identificado.
+Los casos solo preparan los filtros para la demostración. La interfaz no muestra controles para guardar ni exportar reportes, y no guarda fotografías.
 
 ## Instalación y ejecución
 
@@ -79,7 +79,7 @@ Para reiniciar después de editar `backend/.env`, detén con `Ctrl+C` y vuelve a
 
 ## Variables de IA
 
-Configura solo `backend/.env`; nunca una variable `VITE_*`:
+Configura las claves exclusivamente en `backend/.env`; nunca como variables `VITE_*`:
 
 ```env
 AI_PROVIDER=gemini
@@ -89,9 +89,32 @@ GEMINI_IMAGE_MODEL=gemini-3.1-flash-lite-image
 GROQ_API_KEY=
 GROQ_VISION_MODEL=qwen/qwen3.8-27b
 ANALYSIS_DEMO_MODE=false
+FRONTEND_URL=http://localhost:5173
 ```
 
 `AI_PROVIDER` acepta `gemini`, `groq` u `openai`; solo se utiliza el proveedor seleccionado, sin fallback automático. El modo DEMO no contacta ningún proveedor. En modo real, la imagen se envía temporalmente al backend y al proveedor de IA configurado para analizarla, sin persistencia. El catálogo y su presupuesto son independientes del análisis y no implementan un recomendador personalizado.
+
+## Despliegue: GitHub Pages + Render
+
+El frontend se publica desde `frontend/dist` en GitHub Pages mediante [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml). Vite usa la base `/StyleMatch/`, por lo que los assets internos permanecen disponibles en `https://gretahm01.github.io/StyleMatch/`.
+
+1. En GitHub, abre **Settings → Pages** y selecciona **GitHub Actions** como fuente de publicación.
+2. En **Settings → Secrets and variables → Actions → Variables**, crea `VITE_API_URL` con la URL HTTPS pública de Render, sin diagonal final; por ejemplo, `https://stylematch-api.onrender.com`.
+3. Haz push a `main`. El workflow instala dependencias, construye el workspace `frontend` y publica el resultado.
+
+El backend se puede crear desde [`render.yaml`](render.yaml) como un servicio web Node. En Render configura estas variables de entorno:
+
+```env
+AI_PROVIDER=groq
+GROQ_API_KEY=tu_clave_secreta
+GROQ_VISION_MODEL=qwen/qwen3.8-27b
+FRONTEND_URL=https://gretahm01.github.io
+ANALYSIS_DEMO_MODE=false
+```
+
+`GROQ_API_KEY` debe registrarse como secreto de Render, nunca en GitHub Actions, el repositorio ni `VITE_*`. Si se utiliza Gemini u OpenAI, registra únicamente las variables del proveedor seleccionado en Render. Render proporciona `PORT` automáticamente; el servidor ya lo consume. El CORS del backend permite `https://gretahm01.github.io` y el origen local de Vite.
+
+Render usa almacenamiento efímero en el plan gratuito: el archivo SQLite puede reiniciarse al redeploy o al reiniciar el servicio. Para conservar perfiles y evaluaciones, configura un disco persistente compatible y apunta `STYLEMATCH_DB_PATH` a su ruta; no subas el archivo `.db` al repositorio.
 
 ### Preparación de fotografías sintéticas del catálogo
 

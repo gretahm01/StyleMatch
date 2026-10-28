@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: stylematch-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build --workspace backend
+    startCommand: npm run start --workspace backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.5.0
+      - key: AI_PROVIDER
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_VISION_MODEL
+        value: qwen/qwen3.8-27b
+      - key: FRONTEND_URL
+        value: https://gretahm01.github.io
+      - key: ANALYSIS_DEMO_MODE
+        value: "false"
