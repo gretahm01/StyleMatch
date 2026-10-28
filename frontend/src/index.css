@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #33261f;
+  --color-cream: #fcf9f4;
+  --color-sand: #eadfce;
+  --color-peach: #f5dfd1;
+  --color-terracotta: #a65d42;
+  --color-terracotta-dark: #8c4933;
+  --font-display: Georgia, Cambria, "Times New Roman", serif;
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-cream font-sans text-ink antialiased;
+  }
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-enter { animation: enter 500ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

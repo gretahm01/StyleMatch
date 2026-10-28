@@ -1,0 +1,2180 @@
+[
+  {
+    "id": "fashion-001",
+    "externalProductId": null,
+    "name": "Bolso Siena",
+    "description": "Bolso estructurado para uso diario. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "beige",
+      "oro"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "piel vegana",
+    "price": 1290,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-001.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "bolso",
+      "oficina",
+      "cálido"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-002",
+    "externalProductId": null,
+    "name": "Tenis Nube",
+    "description": "Tenis de silueta limpia y suela cómoda. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "tenis",
+    "primaryColor": "crema",
+    "secondaryColors": [
+      "arena"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "cuero",
+    "price": 1590,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-002.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "tenis",
+      "casual",
+      "neutro"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-003",
+    "externalProductId": null,
+    "name": "Mocasín Olivo",
+    "description": "Mocasín suave con acabado mate. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "zapatos",
+    "primaryColor": "olivo",
+    "secondaryColors": [
+      "beige"
+    ],
+    "styles": [
+      "clásico"
+    ],
+    "material": "gamuza",
+    "price": 1740,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-003.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "zapatos",
+      "clásico",
+      "otoño"
+    ],
+    "occasions": [
+      "work",
+      "formal_event"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-004",
+    "externalProductId": null,
+    "name": "Chamarra Arcilla",
+    "description": "Chamarra corta de textura aterciopelada. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "chamarras",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "chocolate"
+    ],
+    "styles": [
+      "bohemio"
+    ],
+    "material": "corduroy",
+    "price": 1890,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-004.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "chamarra",
+      "textura",
+      "capas"
+    ],
+    "occasions": [],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-005",
+    "externalProductId": null,
+    "name": "Aretes Sol",
+    "description": "Aretes curvos de acento dorado. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "accesorios",
+    "primaryColor": "oro",
+    "secondaryColors": [
+      "marfil"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "latón",
+    "price": 420,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-005.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "joyería",
+      "accesorio",
+      "dorado"
+    ],
+    "occasions": [
+      "party"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-006",
+    "externalProductId": null,
+    "name": "Pantalón Lino Arena",
+    "description": "Pantalón recto de caída ligera. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "pantalones",
+    "primaryColor": "arena",
+    "secondaryColors": [
+      "crema"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "lino",
+    "price": 1190,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-006.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "pantalón",
+      "lino",
+      "relajado"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-007",
+    "externalProductId": null,
+    "name": "Blusa Brisa",
+    "description": "Blusa fluida con cuello delicado. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "blusas",
+    "primaryColor": "marfil",
+    "secondaryColors": [
+      "beige"
+    ],
+    "styles": [
+      "romántico"
+    ],
+    "material": "viscosa",
+    "price": 890,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-007.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "blusa",
+      "suave",
+      "diario"
+    ],
+    "occasions": [
+      "daily"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-008",
+    "externalProductId": null,
+    "name": "Cinturón Cacao",
+    "description": "Cinturón fino con hebilla discreta. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "accesorios",
+    "primaryColor": "chocolate",
+    "secondaryColors": [
+      "oro"
+    ],
+    "styles": [
+      "clásico"
+    ],
+    "material": "cuero",
+    "price": 590,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-008.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "cinturón",
+      "cuero",
+      "clásico"
+    ],
+    "occasions": [
+      "work",
+      "formal_event"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-009",
+    "externalProductId": null,
+    "name": "Vestido Salvia",
+    "description": "Vestido midi de líneas sencillas. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "vestidos",
+    "primaryColor": "salvia",
+    "secondaryColors": [
+      "crema"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "algodón",
+    "price": 1490,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-009.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "vestido",
+      "midi",
+      "natural"
+    ],
+    "occasions": [],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-010",
+    "externalProductId": null,
+    "name": "Pañuelo Duna",
+    "description": "Pañuelo estampado para cuello o bolso. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "accesorios",
+    "primaryColor": "beige",
+    "secondaryColors": [
+      "terracota",
+      "olivo"
+    ],
+    "styles": [
+      "bohemio"
+    ],
+    "material": "seda",
+    "price": 690,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-010.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "pañuelo",
+      "estampado",
+      "acento"
+    ],
+    "occasions": [],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-011",
+    "externalProductId": null,
+    "name": "Bolso Luma",
+    "description": "Bolso cruzado compacto y versátil. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "oro"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "piel vegana",
+    "price": 1100,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-011.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "bolso",
+      "cruzado",
+      "noche"
+    ],
+    "occasions": [
+      "party",
+      "date"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-012",
+    "externalProductId": null,
+    "name": "Camisa Cielo",
+    "description": "Camisa amplia con botones naturales. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "blusas",
+    "primaryColor": "azul cielo",
+    "secondaryColors": [
+      "blanco"
+    ],
+    "styles": [
+      "clásico"
+    ],
+    "material": "algodón",
+    "price": 980,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-012.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "camisa",
+      "algodón",
+      "básico"
+    ],
+    "occasions": [
+      "daily"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-013",
+    "externalProductId": null,
+    "name": "Pantalón Noche",
+    "description": "Pantalón de pinzas para ocasiones especiales. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "pantalones",
+    "primaryColor": "azul marino",
+    "secondaryColors": [
+      "negro"
+    ],
+    "styles": [
+      "clásico"
+    ],
+    "material": "gabardina",
+    "price": 1380,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-013.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "pantalón",
+      "sastre",
+      "formal"
+    ],
+    "occasions": [
+      "formal_event",
+      "party"
+    ],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-014",
+    "externalProductId": null,
+    "name": "Botín Siena",
+    "description": "Botín de tacón bajo y punta redonda. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "zapatos",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "café"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "cuero",
+    "price": 1980,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-014.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "botín",
+      "cuero",
+      "otoño"
+    ],
+    "occasions": [],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "fashion-015",
+    "externalProductId": null,
+    "name": "Chamarra Lluvia",
+    "description": "Chamarra ligera con silueta utilitaria. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "chamarras",
+    "primaryColor": "beige",
+    "secondaryColors": [
+      "olivo"
+    ],
+    "styles": [
+      "utilitario"
+    ],
+    "material": "nylon reciclado",
+    "price": 1690,
+    "currency": "MXN",
+    "image": "/images/catalog/fashion-015.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "chamarra",
+      "ligera",
+      "exterior"
+    ],
+    "occasions": [],
+    "genderTarget": "sin especificar",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-001",
+    "externalProductId": null,
+    "name": "Lámpara Ámbar",
+    "description": "Lámpara de mesa con luz ambiental. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "crema"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "cerámica",
+    "price": 1760,
+    "currency": "MXN",
+    "image": "/images/catalog/home-001.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "lámpara",
+      "luz cálida",
+      "sala"
+    ],
+    "occasions": [
+      "renew_living_room",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-002",
+    "externalProductId": null,
+    "name": "Cojín Trama",
+    "description": "Cojín tejido de tacto suave. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "cojines",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "arena"
+    ],
+    "styles": [
+      "bohemio"
+    ],
+    "material": "algodón",
+    "price": 480,
+    "currency": "MXN",
+    "image": "/images/catalog/home-002.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "cojín",
+      "textura",
+      "sofá"
+    ],
+    "occasions": [
+      "renew_living_room",
+      "cozy_atmosphere",
+      "decorate_bedroom"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-003",
+    "externalProductId": null,
+    "name": "Alfombra Duna",
+    "description": "Alfombra de pelo bajo en tonos neutros. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "alfombras",
+    "primaryColor": "arena",
+    "secondaryColors": [
+      "marfil",
+      "beige"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "lana",
+    "price": 2890,
+    "currency": "MXN",
+    "image": "/images/catalog/home-003.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "alfombra",
+      "neutro",
+      "sala"
+    ],
+    "occasions": [
+      "renew_living_room",
+      "minimalist_decor"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-004",
+    "externalProductId": null,
+    "name": "Mesa Roble",
+    "description": "Mesa auxiliar de proporciones orgánicas. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "mesas auxiliares",
+    "primaryColor": "roble",
+    "secondaryColors": [
+      "beige"
+    ],
+    "styles": [
+      "escandinavo"
+    ],
+    "material": "madera",
+    "price": 2190,
+    "currency": "MXN",
+    "image": "/images/catalog/home-004.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "mesa",
+      "madera",
+      "auxiliar"
+    ],
+    "occasions": [
+      "renew_living_room",
+      "minimalist_decor"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-005",
+    "externalProductId": null,
+    "name": "Cuadro Horizonte",
+    "description": "Lámina abstracta de tonos cálidos. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "cuadros",
+    "primaryColor": "beige",
+    "secondaryColors": [
+      "terracota",
+      "salvia"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "papel artístico",
+    "price": 960,
+    "currency": "MXN",
+    "image": "/images/catalog/home-005.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "cuadro",
+      "abstracto",
+      "pared"
+    ],
+    "occasions": [
+      "decorate_bedroom"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-006",
+    "externalProductId": null,
+    "name": "Florero Alba",
+    "description": "Florero de cuello alto y acabado mate. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "floreros",
+    "primaryColor": "marfil",
+    "secondaryColors": [
+      "arena"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "cerámica",
+    "price": 650,
+    "currency": "MXN",
+    "image": "/images/catalog/home-006.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "florero",
+      "cerámica",
+      "mesa"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-007",
+    "externalProductId": null,
+    "name": "Bandeja Cobre",
+    "description": "Bandeja decorativa para mesa o recibidor. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "decoraciones",
+    "primaryColor": "cobre",
+    "secondaryColors": [
+      "chocolate"
+    ],
+    "styles": [
+      "art déco"
+    ],
+    "material": "metal",
+    "price": 740,
+    "currency": "MXN",
+    "image": "/images/catalog/home-007.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "bandeja",
+      "metal",
+      "recibidor"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-008",
+    "externalProductId": null,
+    "name": "Lámpara Niebla",
+    "description": "Lámpara de pie con pantalla textil. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "crema",
+    "secondaryColors": [
+      "madera"
+    ],
+    "styles": [
+      "escandinavo"
+    ],
+    "material": "lino",
+    "price": 2490,
+    "currency": "MXN",
+    "image": "/images/catalog/home-008.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "lámpara",
+      "pie",
+      "lectura"
+    ],
+    "occasions": [
+      "workspace",
+      "decorate_bedroom"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-009",
+    "externalProductId": null,
+    "name": "Cojín Olivo",
+    "description": "Cojín cuadrado de acento natural. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "cojines",
+    "primaryColor": "olivo",
+    "secondaryColors": [
+      "beige"
+    ],
+    "styles": [
+      "rústico"
+    ],
+    "material": "lino",
+    "price": 520,
+    "currency": "MXN",
+    "image": "/images/catalog/home-009.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "cojín",
+      "olivo",
+      "natural"
+    ],
+    "occasions": [
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-010",
+    "externalProductId": null,
+    "name": "Alfombra Calma",
+    "description": "Alfombra plana para zonas de descanso. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "alfombras",
+    "primaryColor": "gris claro",
+    "secondaryColors": [
+      "marfil"
+    ],
+    "styles": [
+      "minimalista"
+    ],
+    "material": "algodón reciclado",
+    "price": 1980,
+    "currency": "MXN",
+    "image": "/images/catalog/home-010.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "alfombra",
+      "reciclado",
+      "dormitorio"
+    ],
+    "occasions": [
+      "decorate_bedroom",
+      "minimalist_decor"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-011",
+    "externalProductId": null,
+    "name": "Mesa Nómada",
+    "description": "Mesa lateral plegable para espacios flexibles. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "mesas auxiliares",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "roble"
+    ],
+    "styles": [
+      "industrial"
+    ],
+    "material": "metal y madera",
+    "price": 1740,
+    "currency": "MXN",
+    "image": "/images/catalog/home-011.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "mesa",
+      "industrial",
+      "lateral"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-012",
+    "externalProductId": null,
+    "name": "Cuadro Arcilla",
+    "description": "Composición geométrica con marco de roble. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "cuadros",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "marfil",
+      "negro"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "lienzo",
+    "price": 1280,
+    "currency": "MXN",
+    "image": "/images/catalog/home-012.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "cuadro",
+      "geométrico",
+      "arte"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-013",
+    "externalProductId": null,
+    "name": "Florero Tierra",
+    "description": "Florero bajo para arreglos secos. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "floreros",
+    "primaryColor": "terracota",
+    "secondaryColors": [
+      "café"
+    ],
+    "styles": [
+      "rústico"
+    ],
+    "material": "barro",
+    "price": 590,
+    "currency": "MXN",
+    "image": "/images/catalog/home-013.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "florero",
+      "barro",
+      "orgánico"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-014",
+    "externalProductId": null,
+    "name": "Espejo Aura",
+    "description": "Espejo redondo con marco delgado. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "decoraciones",
+    "primaryColor": "oro",
+    "secondaryColors": [
+      "beige"
+    ],
+    "styles": [
+      "art déco"
+    ],
+    "material": "metal",
+    "price": 1560,
+    "currency": "MXN",
+    "image": "/images/catalog/home-014.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "espejo",
+      "pared",
+      "dorado"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "home-015",
+    "externalProductId": null,
+    "name": "Candelabro Salvia",
+    "description": "Candelabro escultórico de dos velas. Producto de demostración; no corresponde a inventario de una tienda externa.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "home",
+    "subcategory": "decoraciones",
+    "primaryColor": "salvia",
+    "secondaryColors": [
+      "marfil"
+    ],
+    "styles": [
+      "contemporáneo"
+    ],
+    "material": "cerámica",
+    "price": 690,
+    "currency": "MXN",
+    "image": "/images/catalog/home-015.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": null,
+    "availabilityVerified": false,
+    "tags": [
+      "candelabro",
+      "cerámica",
+      "detalle"
+    ],
+    "occasions": [],
+    "genderTarget": null,
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Datos ficticios conservados únicamente para demostración académica."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "zara-16428810",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "BOLSA DE HOMBRO PIEL",
+    "description": "BOLSA DE HOMBRO PIEL. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Zara México",
+    "productUrl": "https://www.zara.com/mx/es/bolsa-de-hombro-piel-p16428810.html",
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "azul",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": "piel",
+    "price": 1699,
+    "currency": "MXN",
+    "image": "/images/catalog/zara-16428810.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "bolso",
+      "hombro",
+      "piel"
+    ],
+    "occasions": [
+      "daily",
+      "work",
+      "date"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.zara.com/mx/es/bolsa-de-hombro-piel-p16428810.html",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "zara-16483810",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "BOLSO DE MANO SATINADO",
+    "description": "BOLSO DE MANO SATINADO. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Zara México",
+    "productUrl": "https://www.zara.com/mx/es/bolso-de-mano-satinado-p16483810.html",
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "verde lima",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [
+      "elegante"
+    ],
+    "material": null,
+    "price": 1399,
+    "currency": "MXN",
+    "image": "/images/catalog/zara-16483810.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "bolso",
+      "mano",
+      "satinado"
+    ],
+    "occasions": [
+      "party",
+      "date"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.zara.com/mx/es/bolso-de-mano-satinado-p16483810.html",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "zara-16048810",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "BOLSA DE HOMBRO ESTAMPADO TEXTURA",
+    "description": "BOLSA DE HOMBRO ESTAMPADO TEXTURA. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Zara México",
+    "productUrl": "https://www.zara.com/mx/es/bolsa-de-hombro-estampado-textura-p16048810.html",
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "multicolor",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 1099,
+    "currency": "MXN",
+    "image": "/images/catalog/zara-16048810.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "bolso",
+      "hombro",
+      "estampado"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.zara.com/mx/es/bolsa-de-hombro-estampado-textura-p16048810.html",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "zara-16869810",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "BOLSA DE HOMBRO ABALORIOS",
+    "description": "BOLSA DE HOMBRO ABALORIOS. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Zara México",
+    "productUrl": "https://www.zara.com/mx/es/bolsa-de-hombro-abalorios-p16869810.html",
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "naranja",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 1399,
+    "currency": "MXN",
+    "image": "/images/catalog/zara-16869810.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "bolso",
+      "hombro",
+      "abalorios"
+    ],
+    "occasions": [
+      "party",
+      "date"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.zara.com/mx/es/bolsa-de-hombro-abalorios-p16869810.html",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "zara-16448810",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "BOLSA BANDOLERA SOLAPA",
+    "description": "BOLSA BANDOLERA SOLAPA. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Zara México",
+    "productUrl": "https://www.zara.com/mx/es/bolsa-bandolera-solapa-p16448810.html",
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 799,
+    "currency": "MXN",
+    "image": "/images/catalog/zara-16448810-photo.png",
+    "imageRightsStatus": "generated_owned",
+    "imageMetadata": {
+      "kind": "illustrative_photo",
+      "sourceUrl": null,
+      "author": "StyleMatch AI",
+      "license": "Activo original generado para demostración académica; no es fotografía oficial de Zara.",
+      "attribution": null,
+      "checkedAt": "2026-10-28T00:20:00-06:00"
+    },
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "bolso",
+      "bandolera",
+      "solapa"
+    ],
+    "occasions": [
+      "casual",
+      "daily",
+      "work"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.zara.com/mx/es/bolsa-bandolera-solapa-p16448810.html",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-40608529",
+    "externalProductId": "40608529",
+    "name": "IKEA PS 2026 Lámpara de piso, azul, 182 cm",
+    "description": "IKEA PS 2026 Lámpara de piso, azul, 182 cm. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/ikea-ps-2026-lampara-de-piso-azul-40608529/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "azul",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": "acero con recubrimiento en polvo",
+    "price": 1499,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-40608529.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "piso",
+      "iluminación"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/ikea-ps-2026-lampara-de-piso-azul-40608529/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-60544051",
+    "externalProductId": "60544051",
+    "name": "BARLAST Lámpara de piso, negro/blanco, 150 cm",
+    "description": "BARLAST Lámpara de piso, negro/blanco, 150 cm. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/barlast-lampara-de-piso-negro-blanco-60544051/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": "acero con recubrimiento en polvo y plástico de polipropileno",
+    "price": 279,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-60544051.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "piso",
+      "iluminación"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/barlast-lampara-de-piso-negro-blanco-60544051/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-90544399",
+    "externalProductId": "90544399",
+    "name": "TÄRNABY Lámpara de mesa, atenuable carbón, 25 cm",
+    "description": "TÄRNABY Lámpara de mesa, atenuable carbón, 25 cm. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/taernaby-lampara-de-mesa-atenuable-carbon-90544399/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "carbón",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 999,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-90544399.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "mesa",
+      "atenuable"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/taernaby-lampara-de-mesa-atenuable-carbon-90544399/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-70544178",
+    "externalProductId": "70544178",
+    "name": "DEJSA Lámpara de mesa, beige/ópalo vidrio, 28 cm",
+    "description": "DEJSA Lámpara de mesa, beige/ópalo vidrio, 28 cm. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/dejsa-lampara-de-mesa-beige-opalo-vidrio-70544178/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "beige",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": "vidrio ópalo",
+    "price": 1499,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-70544178.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "mesa",
+      "iluminación"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere",
+      "decorate_bedroom"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/dejsa-lampara-de-mesa-beige-opalo-vidrio-70544178/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-00563580",
+    "externalProductId": "00563580",
+    "name": "RÖDFLIK Lámpara de piso, lectura, verde grisáceo",
+    "description": "RÖDFLIK Lámpara de piso, lectura, verde grisáceo. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/roedflik-lampara-de-piso-lectura-verde-grisaceo-00563580/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "verde grisáceo",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 1299,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-00563580.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "piso",
+      "lectura"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/roedflik-lampara-de-piso-lectura-verde-grisaceo-00563580/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-10544421",
+    "externalProductId": "10544421",
+    "name": "ÅRSTID Lámpara de mesa, latón/blanco",
+    "description": "ÅRSTID Lámpara de mesa, latón/blanco. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/arstid-lampara-de-mesa-laton-blanco-10544421/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "latón",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 799,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-10544421.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "mesa",
+      "iluminación"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/arstid-lampara-de-mesa-laton-blanco-10544421/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-90594841",
+    "externalProductId": "90594841",
+    "name": "STRANDAD Lámpara de piso, blanco/negro",
+    "description": "STRANDAD Lámpara de piso, blanco/negro. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/strandad-lampara-de-piso-blanco-negro-90594841/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "blanco",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 399,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-90594841.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "piso",
+      "iluminación"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/strandad-lampara-de-piso-blanco-negro-90594841/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-90589118",
+    "externalProductId": "90589118",
+    "name": "SPETSBOJ Lámpara de mesa, atenuable/blanco, 22 cm",
+    "description": "SPETSBOJ Lámpara de mesa, atenuable/blanco, 22 cm. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/spetsboj-lampara-de-mesa-atenuable-blanco-90589118/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "blanco",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 399,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-90589118.svg",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "mesa",
+      "atenuable"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/spetsboj-lampara-de-mesa-atenuable-blanco-90589118/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "ikea-60585616",
+    "externalProductId": "60585616",
+    "name": "BLÅSVERK Lámpara de mesa, rojo, 36 cm",
+    "description": "BLÅSVERK Lámpara de mesa, rojo, 36 cm. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "IKEA México",
+    "productUrl": "https://www.ikea.com/mx/es/p/blasverk-lampara-de-mesa-rojo-60585616/",
+    "category": "home",
+    "subcategory": "lámparas",
+    "primaryColor": "rojo",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 499,
+    "currency": "MXN",
+    "image": "/images/catalog/ikea-60585616.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "lámpara",
+      "mesa",
+      "iluminación"
+    ],
+    "occasions": [
+      "workspace",
+      "cozy_atmosphere"
+    ],
+    "genderTarget": null,
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.ikea.com/mx/es/p/blasverk-lampara-de-mesa-rojo-60585616/",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "bershka-2439478800",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Pantalón jogger",
+    "description": "Pantalón jogger. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Bershka México",
+    "productUrl": "https://www.bershka.com/mx/pantal%C3%B3n-jogger-c0p238451467.html?colorId=800",
+    "category": "fashion",
+    "subcategory": "pantalones",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [
+      "casual",
+      "deportivo"
+    ],
+    "material": null,
+    "price": 549,
+    "currency": "MXN",
+    "image": "/images/catalog/bershka-2439478800-photo.png",
+    "imageRightsStatus": "generated_owned",
+    "imageMetadata": {
+      "kind": "illustrative_photo",
+      "sourceUrl": null,
+      "author": "StyleMatch AI",
+      "license": "Activo original generado para demostración académica; no es fotografía oficial de Bershka.",
+      "attribution": null,
+      "checkedAt": "2026-10-28T00:20:00-06:00"
+    },
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "pantalón",
+      "jogger"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.bershka.com/mx/pantal%C3%B3n-jogger-c0p238451467.html?colorId=800",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1174669813",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Tenis de mujer",
+    "description": "Tenis de mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/tenis-de-mujer/1174669813",
+    "category": "fashion",
+    "subcategory": "tenis",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [
+      "deportivo"
+    ],
+    "material": null,
+    "price": 1424.25,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1174669813.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "tenis",
+      "deportivo"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/tenis-de-mujer/1174669813",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1208825000",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Chamarra para mujer",
+    "description": "Chamarra para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/chamarra-para-mujer/1208825000",
+    "category": "fashion",
+    "subcategory": "chamarras",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 2039.15,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1208825000.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "chamarra",
+      "mujer"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/chamarra-para-mujer/1208825000",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1208694282",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Cinturón para mujer",
+    "description": "Cinturón para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/cintur%C3%B3n-para-mujer/1208694282",
+    "category": "fashion",
+    "subcategory": "cinturones",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 211.65,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1208694282.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "cinturón",
+      "accesorio"
+    ],
+    "occasions": [
+      "casual",
+      "daily",
+      "work"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/cintur%C3%B3n-para-mujer/1208694282",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1176394218",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Tenis para mujer",
+    "description": "Tenis para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/tenis-para-mujer/1176394218",
+    "category": "fashion",
+    "subcategory": "tenis",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [
+      "casual"
+    ],
+    "material": null,
+    "price": 799.2,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1176394218.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "tenis",
+      "casual"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/tenis-para-mujer/1176394218",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1196594556",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Chamarra para mujer",
+    "description": "Chamarra para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/chamarra-para-mujer/1196594556",
+    "category": "fashion",
+    "subcategory": "chamarras",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 1274.15,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1196594556.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "chamarra",
+      "mujer"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/chamarra-para-mujer/1196594556",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1174662665",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Chamarra para mujer",
+    "description": "Chamarra para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/chamarra-para-mujer/1174662665",
+    "category": "fashion",
+    "subcategory": "chamarras",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [
+      "deportivo"
+    ],
+    "material": null,
+    "price": 1444.15,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1174662665.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "chamarra",
+      "deportiva"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/chamarra-para-mujer/1174662665",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1162531426",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Tenis para mujer",
+    "description": "Tenis para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/Tenis-para-mujer/1162531426",
+    "category": "fashion",
+    "subcategory": "tenis",
+    "primaryColor": "blanco",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [
+      "casual"
+    ],
+    "material": null,
+    "price": 1146.65,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1162531426-photo.png",
+    "imageRightsStatus": "generated_owned",
+    "imageMetadata": {
+      "kind": "illustrative_photo",
+      "sourceUrl": null,
+      "author": "StyleMatch AI",
+      "license": "Activo original generado para demostración académica; no es fotografía oficial de Liverpool.",
+      "attribution": null,
+      "checkedAt": "2026-10-28T00:20:00-06:00"
+    },
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "tenis",
+      "casual"
+    ],
+    "occasions": [
+      "casual",
+      "daily",
+      "work"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/Tenis-para-mujer/1162531426",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1185410583",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Bolsa para mujer",
+    "description": "Bolsa para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/Bolsa-para-mujer/1185410583",
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "rosa",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 599,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1185410583.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "bolso",
+      "mujer"
+    ],
+    "occasions": [
+      "casual",
+      "daily"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/Bolsa-para-mujer/1185410583",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool-1130263881",
+    "productAudience": "women",
+    "externalProductId": null,
+    "name": "Cinturón para mujer",
+    "description": "Cinturón para mujer. Producto real verificado en página oficial; la tarjeta usa una ilustración original, no una fotografía comercial.",
+    "store": "Liverpool México",
+    "productUrl": "https://www.liverpool.com.mx/tienda/pdp/cinturon-para-mujer/1130263881",
+    "category": "fashion",
+    "subcategory": "cinturones",
+    "primaryColor": "negro",
+    "secondaryColors": [
+      "sin color secundario verificado"
+    ],
+    "styles": [],
+    "material": null,
+    "price": 296.65,
+    "currency": "MXN",
+    "image": "/images/catalog/liverpool-1130263881.png",
+    "imageRightsStatus": "placeholder_owned",
+    "available": true,
+    "availabilityVerified": true,
+    "tags": [
+      "cinturón",
+      "accesorio"
+    ],
+    "occasions": [
+      "casual",
+      "daily",
+      "work"
+    ],
+    "genderTarget": "mujer",
+    "source": {
+      "type": "official_product_page",
+      "url": "https://www.liverpool.com.mx/tienda/pdp/cinturon-para-mujer/1130263881",
+      "notes": "Datos factuales consultados en página oficial. Disponibilidad mostrada en catálogo; puede variar por ubicación. Imagen local: ilustración original, no imagen de tienda."
+    },
+    "lastVerifiedAt": "2026-10-27T18:00:00-06:00",
+    "verificationStatus": "verified"
+  }
+]
