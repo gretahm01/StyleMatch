@@ -6,7 +6,7 @@ export function apiUrl(path: string): string {
   if (/^https?:\/\//i.test(path)) return path;
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
   if (configuredApiUrl) return `${configuredApiUrl}${normalizedPath}`;
-  if (import.meta.env.DEV) return `http://localhost:3001${normalizedPath}`;
+  if (import.meta.env.DEV) throw new Error('Falta VITE_API_URL en desarrollo. Define VITE_API_URL=http://localhost:3001 en frontend/.env.');
   throw new Error('La aplicación requiere VITE_API_URL para conectarse al backend publicado.');
 }
 

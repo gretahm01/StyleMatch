@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { apiUrl } from './api';
 
 describe('apiUrl', () => {
-  it('uses the local backend in development when no public API URL is configured', () => {
-    expect(apiUrl('/api/health')).toBe('http://localhost:3001/api/health');
+  it('shows an explicit development configuration error when VITE_API_URL is missing', () => {
+    expect(() => apiUrl('/api/health')).toThrow('Falta VITE_API_URL en desarrollo');
   });
 
   it('keeps complete external URLs unchanged', () => {
