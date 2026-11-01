@@ -110,12 +110,11 @@ describe('API base', () => {
 
   it('recalculates recommendations from an existing analysis without calling Gemini', async () => {
     const analysis = { category: 'fashion', relevant: true, detectedObject: 'Camisa', primaryColors: ['blanco'], secondaryColors: [], style: ['clásico'], possibleMaterials: [], visualDescription: 'Camisa blanca clásica', observedFeatures: ['camisa blanca'], inferences: [], confidenceNotes: [], retryReason: null };
-    const response = await request(app).post('/api/recommendations').send({ analysis, occasion: 'work', minPrice: 0, maxPrice: 1500, includeDemo: false });
+    const response = await request(app).post('/api/recommendations').send({ analysis, occasion: 'work', minPrice: 0, maxPrice: 1500 });
     expect(response.status).toBe(200);
     expect(response.body.occasion).toBe('work');
-    expect(response.body.includeDemo).toBe(false);
+    expect(response.body.includeDemo).toBe(true);
     expect(response.body.recommendations.every((item: { product: { price: number }; productId?: string }) => item.product.price <= 1500)).toBe(true);
-    expect(response.body.recommendations.every((item: { product: { verificationStatus: string } }) => item.product.verificationStatus === 'verified')).toBe(true);
     expect(new Set(response.body.recommendations.map((item: { product: { id: string } }) => item.product.id)).size).toBe(response.body.recommendations.length);
   });
 

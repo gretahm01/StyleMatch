@@ -8,7 +8,7 @@ export interface ScoreBreakdown { visualScore: number; preferenceScore: number; 
 export type RecommendationMatchType = 'direct_match' | 'color_harmony' | 'style_compatible' | 'room_compatible';
 export interface Recommendation { product: CatalogProduct; score: number; breakdown: ScoreBreakdown; explanation: string; matchType: RecommendationMatchType; }
 export interface RecommendationResult { recommendations: Recommendation[]; reason: string | null; hasMore: boolean; remainingCount: number; }
-export interface RecommendationInput { analysis: ImageAnalysis; profile?: TasteProfile; inferredPreferences?: InferredPreferences; excludedProductIds?: string[]; excludedSubcategories?: string[]; occasion: Occasion; minPrice?: number; maxPrice?: number; includeDemo?: boolean; audience?: ProductAudience; products: CatalogProduct[]; }
+export interface RecommendationInput { analysis: ImageAnalysis; profile?: TasteProfile; inferredPreferences?: InferredPreferences; excludedProductIds?: string[]; excludedSubcategories?: string[]; occasion: Occasion; minPrice?: number; maxPrice?: number; /** @deprecated The catalog is always mixed. Retained for compatible internal callers. */ includeDemo?: boolean; audience?: ProductAudience; products: CatalogProduct[]; }
 
 const equivalentGroups = [
   ['beige', 'crema', 'arena', 'marfil', 'blanco', 'roble'], ['terracota', 'arcilla', 'cobre', 'café', 'cafe', 'chocolate', 'marrón'], ['olivo', 'salvia', 'verde'], ['azul cielo', 'azul marino', 'azul'], ['negro', 'gris claro', 'gris'], ['vino', 'borgoña', 'burgundy', 'morado', 'ciruela'],
@@ -137,7 +137,7 @@ function explanation(product: CatalogProduct, input: RecommendationInput, visual
 
 export function recommendProducts(input: RecommendationInput): RecommendationResult {
   const excludedSubcategories = new Set((input.excludedSubcategories ?? []).map(normalize));
-  const candidates = input.products.filter((product) => product.activeForRecommendations !== false && product.category === input.analysis.category && !input.excludedProductIds?.includes(product.id) && !excludedSubcategories.has(normalize(product.subcategory)) && product.price !== null && (input.minPrice === undefined || product.price >= input.minPrice) && (input.maxPrice === undefined || product.price <= input.maxPrice) && (input.audience === undefined || input.audience === 'unspecified' || product.category !== 'fashion' || product.productAudience === input.audience || product.productAudience === 'unisex') && (input.includeDemo !== false || product.verificationStatus === 'verified') && (product.verificationStatus === 'demo' || (product.available === true && product.availabilityVerified)) && (!input.profile || input.profile.interestCategory === 'both' || input.profile.interestCategory === product.category) && occasionMatches(product, input.occasion).length > 0);
+  const candidates = input.products.filter((product) => product.activeForRecommendations !== false && product.category === input.analysis.category && !input.excludedProductIds?.includes(product.id) && !excludedSubcategories.has(normalize(product.subcategory)) && product.price !== null && (input.minPrice === undefined || product.price >= input.minPrice) && (input.maxPrice === undefined || product.price <= input.maxPrice) && (input.audience === undefined || input.audience === 'unspecified' || product.category !== 'fashion' || product.productAudience === input.audience || product.productAudience === 'unisex') && (product.verificationStatus === 'demo' || (product.available === true && product.availabilityVerified)) && (!input.profile || input.profile.interestCategory === 'both' || input.profile.interestCategory === product.category) && occasionMatches(product, input.occasion).length > 0);
   const sortRanked = (left: Recommendation, right: Recommendation) => right.breakdown.visualScore - left.breakdown.visualScore || right.score - left.score || Number(right.product.verificationStatus === 'verified') - Number(left.product.verificationStatus === 'verified') || left.product.id.localeCompare(right.product.id);
   const ranked = candidates.flatMap((product) => {
     const visual = visualCompatibility(product, input.analysis);
@@ -151,10 +151,9 @@ export function recommendProducts(input: RecommendationInput): RecommendationRes
   const selectedSubcategories = new Set(selected.map((item) => normalize(item.product.subcategory)));
   const selectedIds = new Set(selected.map((item) => item.product.id));
   const remainingCount = ranked.filter((item) => !selectedIds.has(item.product.id) && !selectedSubcategories.has(normalize(item.product.subcategory))).length;
-  const scope = input.includeDemo === false ? ' de tiendas reales' : '';
   const noMatchReason = 'No hay productos del catálogo actual que combinen de forma verificable con esta foto.';
   const reason = selected.length === 3 ? null : selected.length === 0
     ? noMatchReason
-    : `Solo hay ${selected.length} producto(s)${scope} con compatibilidad visual verificable para esta foto.`;
+    : `Solo hay ${selected.length} producto(s) con compatibilidad visual verificable para esta foto.`;
   return { recommendations: selected, hasMore: remainingCount > 0, remainingCount, reason };
 }

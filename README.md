@@ -8,7 +8,7 @@ Antes del análisis puedes guardar, sin registro ni correo, un alias opcional y 
 
 El formulario diferencia Moda y Hogar: en Moda hay estilos visuales, prioridades, cortes y estampados; en Hogar se muestran estilos decorativos y materiales, sin campos de prendas. Los estilos por categoría se guardan por separado. Los perfiles existentes conservan `preferredStyles` y el motor los usa como compatibilidad cuando aún no se han elegido estilos nuevos.
 
-También se selecciona una ocasión compatible con Moda u Hogar y un rango opcional en MXN. El selector **Productos a recomendar** permite elegir entre solo artículos verificados de tiendas reales o incluir DEMO cuando falten alternativas. Después de Gemini (o del resultado DEMO), el botón **Actualizar recomendaciones** usa el análisis que permanece solo en memoria de la sesión: no reenvía la fotografía ni realiza otra consulta a Gemini. El backend aplica disponibilidad y presupuesto antes de puntuar, normaliza equivalencias de color/estilo, evita subcategorías repetidas y devuelve hasta tres productos.
+También se selecciona una ocasión compatible con Moda u Hogar y un rango opcional en MXN. El catálogo siempre es mixto: productos verificados y DEMO compiten con las mismas reglas de compatibilidad; las tarjetas DEMO se identifican como **DEMO · ilustrativo** y nunca se presentan como inventario comercial. Después de Gemini (o del resultado DEMO), el botón **Actualizar recomendaciones** usa el análisis que permanece solo en memoria de la sesión: no reenvía la fotografía ni realiza otra consulta a Gemini. El backend aplica disponibilidad y presupuesto antes de puntuar, prioriza color, estilo, ocasión y el tipo de prenda o espacio, evita subcategorías repetidas y devuelve hasta tres productos.
 
 La puntuación determinista es: compatibilidad visual 35% (color, estilo y material probable), gustos 30%, ocasión 20% y complementariedad 15%. Si no hay tres candidatos compatibles, se devuelven menos y se explica la causa. El modo DEMO sigue identificado visualmente y no contacta Gemini.
 
@@ -58,6 +58,19 @@ Campos clave de un producto verificado:
 ```
 
 La interfaz ofrece presupuesto mínimo/máximo en MXN. El backend solo devuelve artículos con precio conocido dentro del rango; si no hay tres, la UI lo comunica. Cada precio y disponibilidad verificada muestra su fecha y advierte que puede cambiar.
+
+### Agregar un producto DEMO con imagen local
+
+Coloca la imagen local en `backend/public/images/catalog/`. Usa JPG, PNG o WebP, un nombre estable basado en el ID, por ejemplo `backend/public/images/catalog/demo-nuevo-001.webp`, y usa exactamente la ruta pública `/images/catalog/demo-nuevo-001.webp` en el campo `image`. No coloques la imagen en `frontend/public`: el backend es quien sirve el catálogo y sus recursos.
+
+Parte de [`backend/src/data/catalog-demo.template.json`](backend/src/data/catalog-demo.template.json) y añade el objeto al arreglo de [`backend/src/data/catalog.json`](backend/src/data/catalog.json). El comando de importación reemplaza el archivo completo, por lo que úsalo solo con una copia completa del catálogo que ya incluya el nuevo producto. Todo producto DEMO nuevo debe contener al menos:
+
+- `id` único, `name`, `category` (`fashion` o `home`) y `subcategory`.
+- `image`, `primaryColor` y `secondaryColors` (en el esquema actual, estos dos campos representan `colors`).
+- `styles`, `occasions`, `productAudience`, `price`, `available` y `availabilityVerified`.
+- `sourceType: "demo"`, `source.type: "internal_demo"`, `store: "StyleMatch Demo"`, `productUrl: null` y `verificationStatus: "demo"`.
+
+Activa `activeForRecommendations: true` para que compita en el catálogo mixto. Conserva `false` si solo debe permanecer archivado. Las imágenes deben ser propias, autorizadas o placeholders; describe su condición en `imageRightsStatus` e `imageMetadata`. Un DEMO no debe incluir enlace comercial ni atribuirse a una tienda real.
 
 ## Cinco casos de presentación
 

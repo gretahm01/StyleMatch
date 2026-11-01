@@ -1,0 +1,44 @@
+[
+  {
+    "id": "demo-nuevo-001",
+    "externalProductId": null,
+    "name": "Bolso DEMO arena",
+    "description": "Producto ficticio para demostración académica; no corresponde a inventario comercial.",
+    "store": "StyleMatch Demo",
+    "productUrl": null,
+    "category": "fashion",
+    "subcategory": "bolsos",
+    "primaryColor": "beige",
+    "secondaryColors": ["terracota"],
+    "styles": ["minimalista"],
+    "material": "lona",
+    "price": 899,
+    "currency": "MXN",
+    "image": "/images/catalog/demo-nuevo-001.webp",
+    "imageRightsStatus": "placeholder_owned",
+    "imageMetadata": {
+      "kind": "illustrative_photo",
+      "sourceUrl": null,
+      "author": null,
+      "license": "Propia o con licencia documentada",
+      "attribution": null,
+      "checkedAt": "2026-11-01T12:00:00-06:00",
+      "fallbackImage": "/images/catalog/fashion-placeholder.svg"
+    },
+    "available": null,
+    "availabilityVerified": false,
+    "tags": ["demo", "bolso", "minimalista"],
+    "occasions": ["casual", "daily", "date"],
+    "genderTarget": null,
+    "productAudience": "unisex",
+    "activeForRecommendations": true,
+    "sourceType": "demo",
+    "source": {
+      "type": "internal_demo",
+      "url": null,
+      "notes": "Producto DEMO; no es un producto comercial verificado."
+    },
+    "lastVerifiedAt": null,
+    "verificationStatus": "demo"
+  }
+]

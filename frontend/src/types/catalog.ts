@@ -11,7 +11,7 @@ export interface CatalogProduct {
   id: string; externalProductId: string | null; name: string; description: string; store: CatalogStore; productUrl: string | null;
   category: ProductCategory; subcategory: string; primaryColor: string; secondaryColors: string[]; styles: string[]; material: string | null;
   price: number | null; currency: 'MXN'; image: string; imageRightsStatus: ImageRightsStatus; imageMetadata?: CatalogImageMetadata; available: boolean | null;
-  availabilityVerified: boolean; tags: string[]; occasions: string[]; genderTarget: string | null; productAudience: ProductAudience; activeForRecommendations?: boolean; source: CatalogSource;
+  availabilityVerified: boolean; tags: string[]; occasions: string[]; genderTarget: string | null; productAudience: ProductAudience; activeForRecommendations?: boolean; source: CatalogSource; sourceType?: 'demo';
   lastVerifiedAt: string | null; verificationStatus: VerificationStatus;
 }
 export interface CatalogBudget { minPrice?: number; maxPrice?: number; }

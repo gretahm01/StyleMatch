@@ -31,7 +31,8 @@ function csvToProducts(text: string): unknown[] {
     price: raw.price ? Number(raw.price) : null, available: raw.available === '' ? null : raw.available === 'true',
     availabilityVerified: raw.availabilityVerified === 'true', secondaryColors: asList(raw.secondaryColors), styles: asList(raw.styles),
     tags: asList(raw.tags), occasions: asList(raw.occasions), genderTarget: raw.genderTarget || null,
-    source: { type: raw.sourceType || 'manual_import', url: raw.sourceUrl || null, notes: raw.sourceNotes || undefined },
+    sourceType: raw.sourceType === 'demo' ? 'demo' : undefined,
+    source: { type: raw.sourceType === 'demo' ? 'internal_demo' : (raw.sourceType || 'manual_import'), url: raw.sourceUrl || null, notes: raw.sourceNotes || undefined },
     lastVerifiedAt: raw.lastVerifiedAt || null, verificationStatus: raw.verificationStatus || 'pending_verification',
   }));
 }

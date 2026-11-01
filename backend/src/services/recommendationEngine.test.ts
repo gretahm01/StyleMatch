@@ -69,12 +69,11 @@ describe('recommendation engine', () => {
     expect(result.recommendations[0].score).toBe(result.recommendations[1].score);
     expect(result.recommendations[0].product.id).toBe('verified-tie');
   });
-  it('excludes every DEMO product in verified-only mode and explains a short real result', () => {
+  it('keeps DEMO and verified candidates together in the only catalog mode', () => {
     const real = { ...product('real-shoe', 'zapatos', 'beige', 'minimalista'), verificationStatus: 'verified' as const, store: 'Liverpool México' as const, productUrl: 'https://www.liverpool.com.mx/tienda/pdp/tenis-para-mujer/1176394218', available: true, availabilityVerified: true, source: { type: 'official_product_page' as const, url: 'https://www.liverpool.com.mx/tienda/pdp/tenis-para-mujer/1176394218' }, lastVerifiedAt: '2026-10-27T18:00:00-06:00' };
     const result = recommendProducts({ analysis: { ...analysis, detectedObject: 'camisa blanca clásica' }, occasion: 'work', includeDemo: false, products: [real, product('demo-bag', 'bolsos', 'beige', 'minimalista')] });
-    expect(result.recommendations).toHaveLength(1);
-    expect(result.recommendations.every((item) => item.product.verificationStatus === 'verified')).toBe(true);
-    expect(result.reason).toContain('tiendas reales');
+    expect(result.recommendations).toHaveLength(2);
+    expect(new Set(result.recommendations.map((item) => item.product.verificationStatus))).toEqual(new Set(['verified', 'demo']));
   });
   it('uses complement rules for a white shirt and does not return another shirt or duplicate subcategories', () => {
     const shirt = product('shirt', 'blusas', 'blanco', 'clásico');
@@ -106,13 +105,13 @@ describe('recommendation engine', () => {
     expect(exhausted.hasMore).toBe(false);
     expect(exhausted.remainingCount).toBe(0);
   });
-  it('mixes verified and DEMO fashion candidates, while strict mode excludes DEMO', () => {
+  it('mixes verified and DEMO fashion candidates even for a legacy strict input', () => {
     const verified = { ...product('fashion-verified', 'bolsos', 'blanco', 'clásico'), verificationStatus: 'verified' as const, store: 'Zara México' as const, productUrl: 'https://www.zara.com/mx/es/example-p1.html', available: true, availabilityVerified: true, source: { type: 'official_product_page' as const, url: 'https://www.zara.com/mx/es/example-p1.html' }, lastVerifiedAt: '2026-10-27T18:00:00-06:00' };
     const demo = product('fashion-demo', 'zapatos', 'blanco', 'clásico');
     const input = { analysis: { ...analysis, detectedObject: 'camisa blanca', primaryColors: ['blanco'], secondaryColors: [], style: ['clásico'] }, occasion: 'work' as const, products: [verified, demo] };
     const mixed = recommendProducts({ ...input, includeDemo: true });
     expect(new Set(mixed.recommendations.map((item) => item.product.verificationStatus))).toEqual(new Set(['verified', 'demo']));
-    expect(recommendProducts({ ...input, includeDemo: false }).recommendations.every((item) => item.product.verificationStatus === 'verified')).toBe(true);
+    expect(new Set(recommendProducts({ ...input, includeDemo: false }).recommendations.map((item) => item.product.verificationStatus))).toEqual(new Set(['verified', 'demo']));
   });
   it('mixes verified and DEMO home candidates with the same origin rules', () => {
     const base = { ...product('home-demo', 'cojines', 'beige', 'minimalista'), category: 'home' as const, store: 'StyleMatch Demo' as const, productAudience: 'unspecified' as const, occasions: ['renew_living_room'] };

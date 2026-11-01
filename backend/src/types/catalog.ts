@@ -38,6 +38,7 @@ export interface CatalogProduct {
   productAudience: ProductAudience;
   activeForRecommendations?: boolean;
   source: CatalogSource;
+  sourceType?: 'demo';
   lastVerifiedAt: string | null;
   verificationStatus: VerificationStatus;
 }

@@ -26,6 +26,7 @@ export const catalogProductSchema = z.object({
   productAudience: z.enum(['women', 'men', 'unisex', 'unspecified']).optional().default('unspecified'),
   activeForRecommendations: z.boolean().optional().default(true),
   source: z.object({ type: z.enum(['official_product_page', 'manual_import', 'internal_demo']), url: z.url().nullable(), notes: z.string().optional() }),
+  sourceType: z.literal('demo').optional(),
   lastVerifiedAt: z.string().datetime({ offset: true }).nullable(),
   verificationStatus: z.enum(['verified', 'pending_verification', 'demo']),
 }).superRefine((product, context) => {
