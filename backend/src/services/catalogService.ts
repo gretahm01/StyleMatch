@@ -2,8 +2,8 @@ import catalog from '../data/catalog.json' with { type: 'json' };
 import type { CatalogFilters, CatalogProduct, ProductAudience, ProductCategory } from '../types/catalog.js';
 
 type RawCatalogProduct = Omit<CatalogProduct, 'productAudience' | 'activeForRecommendations'> & { productAudience?: ProductAudience; activeForRecommendations?: boolean };
-const activeProductIds = new Set(['zara-16428810', 'zara-16483810', 'zara-16048810', 'zara-16869810', 'zara-16448810', 'bershka-2439478800', 'liverpool-1208694282', 'liverpool-1162531426', 'liverpool-1130263881', 'fashion-003', 'fashion-005', 'fashion-011', 'fashion-013', 'ikea-40608529', 'ikea-70544178', 'ikea-60585616', 'home-002', 'home-003', 'home-004', 'home-005', 'home-008', 'home-010']);
-const products = (catalog as RawCatalogProduct[]).map((product) => ({ ...product, productAudience: product.productAudience ?? (product.genderTarget === 'mujer' ? 'women' : 'unspecified'), activeForRecommendations: product.activeForRecommendations ?? activeProductIds.has(product.id) }));
+const activeProductIds = new Set(['zara-16428810', 'zara-16483810', 'zara-16048810', 'zara-16869810', 'zara-16448810', 'bershka-2439478800', 'liverpool-1208694282', 'liverpool-1162531426', 'liverpool-1130263881', 'liverpool-1196594556', 'fashion-003', 'fashion-005', 'fashion-011', 'fashion-013', 'ikea-40608529', 'ikea-70544178', 'ikea-60585616', 'home-002', 'home-003', 'home-004', 'home-005', 'home-008', 'home-010']);
+const products = (catalog as RawCatalogProduct[]).map((product) => ({ ...product, sourceType: product.sourceType ?? (product.verificationStatus === 'demo' ? 'demo' : undefined), productAudience: product.productAudience ?? (product.genderTarget === 'mujer' ? 'women' : 'unspecified'), activeForRecommendations: product.activeForRecommendations ?? activeProductIds.has(product.id) }));
 
 const normalize = (value: string) => value.trim().toLocaleLowerCase('es-MX');
 

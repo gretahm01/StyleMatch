@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { recommendProducts } from './recommendationEngine.js';
+import { hasRecommendationImage, recommendProducts } from './recommendationEngine.js';
 import { getAllProducts } from './catalogService.js';
 import type { CatalogProduct } from '../types/catalog.js';
 import type { ImageAnalysis } from '../types/analysis.js';
 import type { TasteProfile } from '../types/profile.js';
 
 const analysis: ImageAnalysis = { category: 'fashion', relevant: true, detectedObject: 'vestido', primaryColors: ['beige'], secondaryColors: ['terracota'], style: ['minimalista'], possibleMaterials: ['lino'], visualDescription: 'Vestido beige', observedFeatures: [], inferences: [], confidenceNotes: [], retryReason: null };
-const product = (id: string, subcategory: string, color: string, style: string, price = 1000): CatalogProduct => ({ id, externalProductId: null, name: id, description: 'Demo', store: 'StyleMatch Demo', productUrl: null, category: 'fashion', subcategory, primaryColor: color, secondaryColors: [], styles: [style], material: 'lino', price, currency: 'MXN', image: '/images/catalog/fashion-placeholder.svg', imageRightsStatus: 'placeholder_owned', available: null, availabilityVerified: false, tags: ['casual'], occasions: ['casual', 'work', 'date', 'party', 'formal_event', 'daily'], genderTarget: null, productAudience: 'unspecified', source: { type: 'internal_demo', url: null }, lastVerifiedAt: null, verificationStatus: 'demo' });
+const product = (id: string, subcategory: string, color: string, style: string, price = 1000): CatalogProduct => ({ id, externalProductId: null, name: id, description: 'Demo', store: 'StyleMatch Demo', productUrl: null, category: 'fashion', subcategory, primaryColor: color, secondaryColors: [], styles: [style], material: 'lino', price, currency: 'MXN', image: `/images/catalog/${id}.png`, imageRightsStatus: 'authorized', imageMetadata: { kind: 'exact_product', sourceUrl: null, author: 'StyleMatch', license: 'Fotografía local de prueba', attribution: null, checkedAt: '2026-11-01T12:00:00-06:00' }, available: null, availabilityVerified: false, tags: ['casual'], occasions: ['casual', 'work', 'date', 'party', 'formal_event', 'daily'], genderTarget: null, productAudience: 'unspecified', source: { type: 'internal_demo', url: null }, lastVerifiedAt: null, verificationStatus: 'demo' });
 const products = [product('bag', 'bolsos', 'beige', 'minimalista'), product('shoe', 'zapatos', 'terracota', 'clásico'), product('jacket', 'chamarras', 'beige', 'minimalista'), product('duplicate-bag', 'bolsos', 'beige', 'minimalista'), { ...product('unavailable', 'accesorios', 'beige', 'minimalista'), verificationStatus: 'verified' as const, available: false }];
 const beigeProfile: TasteProfile = { id: 'a', alias: null, interestCategory: 'fashion', preferredStyles: ['minimalista'], favoriteColors: ['beige'], avoidedColors: [], preferredMaterials: ['lino'], createdAt: '', updatedAt: '' };
 const terracottaProfile: TasteProfile = { ...beigeProfile, id: 'b', favoriteColors: ['terracota'], preferredStyles: ['clásico'] };
@@ -17,6 +17,25 @@ describe('recommendation engine', () => {
     expect(result.recommendations).toHaveLength(3);
     expect(new Set(result.recommendations.map((item) => item.product.subcategory)).size).toBe(3);
     expect(result.recommendations.map((item) => item.product.id)).not.toContain('unavailable');
+  });
+  it('never recommends a placeholder, icon or generic DEMO illustration', () => {
+    const placeholder = { ...product('generic-demo', 'bolsos', 'beige', 'minimalista'), image: '/images/catalog/fashion-placeholder.svg', imageRightsStatus: 'placeholder_owned' as const, imageMetadata: { kind: 'svg_illustration' as const, sourceUrl: null, author: null, license: 'Placeholder', attribution: null, checkedAt: '2026-11-01T12:00:00-06:00' } };
+    const photoDemo = product('photo-demo', 'zapatos', 'beige', 'minimalista');
+    expect(hasRecommendationImage(placeholder)).toBe(false);
+    expect(hasRecommendationImage(photoDemo)).toBe(true);
+    const result = recommendProducts({ analysis, occasion: 'casual', products: [placeholder, photoDemo] });
+    expect(result.recommendations.map((item) => item.product.id)).toEqual(['photo-demo']);
+  });
+  it('excludes every current DEMO placeholder from real-catalog recommendation results', () => {
+    const scenarios = [
+      { analysis: { ...analysis, detectedObject: 'camisa negra', primaryColors: ['negro'], secondaryColors: [], style: ['casual'], possibleMaterials: [] }, occasion: 'casual' as const },
+      { analysis: { ...analysis, category: 'home' as const, detectedObject: 'espacio de trabajo', primaryColors: ['azul'], secondaryColors: [], style: ['minimalista'], possibleMaterials: [] }, occasion: 'workspace' as const },
+    ];
+    for (const scenario of scenarios) {
+      const result = recommendProducts({ ...scenario, products: getAllProducts() });
+      expect(result.recommendations.every((item) => item.product.verificationStatus !== 'demo')).toBe(true);
+      expect(result.recommendations.every((item) => hasRecommendationImage(item.product))).toBe(true);
+    }
   });
   it('changes ranking for different preferences and respects maximum budget', () => {
     const beige = recommendProducts({ analysis, profile: beigeProfile, occasion: 'casual', products });
@@ -212,5 +231,29 @@ describe('recommendation engine', () => {
     expect(result.recommendations.every((item) => item.product.occasions.includes('decorate_bedroom'))).toBe(true);
     expect(result.recommendations.every((item) => bedroomSubcategories.has(item.product.subcategory))).toBe(true);
     expect(result.recommendations.some((item) => item.matchType === 'room_compatible')).toBe(true);
+  });
+
+  it('prioritizes the verified multicolor and orange bags for matching colorful looks', () => {
+    const catalog = getAllProducts();
+    const colorfulCasual = recommendProducts({ analysis: { ...analysis, detectedObject: 'blusa colorida', primaryColors: ['rojo', 'azul'], secondaryColors: ['amarillo'], style: ['casual'], possibleMaterials: [] }, occasion: 'casual', audience: 'women', products: catalog });
+    const orangeParty = recommendProducts({ analysis: { ...analysis, detectedObject: 'vestido naranja', primaryColors: ['naranja'], secondaryColors: [], style: ['elegante'], possibleMaterials: [] }, occasion: 'party', audience: 'women', products: catalog });
+    expect(colorfulCasual.recommendations.map((item) => item.product.id)).toContain('zara-16048810');
+    expect(orangeParty.recommendations[0]?.product.id).toBe('zara-16869810');
+  });
+
+  it('allows the catalog leather-look jacket illustration to compete for a casual look without claiming its material', () => {
+    const result = recommendProducts({ analysis: { ...analysis, detectedObject: 'camisa negra', primaryColors: ['negro'], secondaryColors: [], style: ['casual'], possibleMaterials: [] }, occasion: 'casual', audience: 'women', products: getAllProducts() });
+    const jacket = result.recommendations.find((item) => item.product.id === 'liverpool-1196594556');
+    expect(jacket).toBeDefined();
+    expect(jacket?.product.material).toBeNull();
+    expect(jacket?.product.styles).toContain('casual');
+  });
+
+  it('does not return casual joggers or sneakers for a formal blue look and keeps each page diverse', () => {
+    const result = recommendProducts({ analysis: { ...analysis, detectedObject: 'blusa azul formal', primaryColors: ['azul marino'], secondaryColors: [], style: ['clásico'], possibleMaterials: [] }, occasion: 'formal_event', audience: 'women', products: getAllProducts() });
+    const ids = result.recommendations.map((item) => item.product.id);
+    expect(ids).not.toEqual(expect.arrayContaining(['bershka-2439478800', 'liverpool-1162531426', 'liverpool-1174669813', 'liverpool-1176394218']));
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(new Set(result.recommendations.map((item) => item.product.subcategory)).size).toBe(result.recommendations.length);
   });
 });

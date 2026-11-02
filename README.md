@@ -28,6 +28,10 @@ No hay sincronización automática, scraping, robots, APIs internas ni descarga 
 
 La investigación y las restricciones por tienda están documentadas en [`docs/catalog-research.md`](docs/catalog-research.md).
 
+El inventario completo de archivos locales, sus entradas asociadas, cobertura de ocasión y razón de elegibilidad está en [`docs/catalog-image-audit.md`](docs/catalog-image-audit.md).
+
+Los DEMO con SVG, icono, collage o ilustración genérica no participan en recomendaciones. La guía para reemplazar cada placeholder por una fotografía local honesta está en [`docs/demo-placeholder-replacement.md`](docs/demo-placeholder-replacement.md).
+
 Para añadir un producto real, verifica manualmente una página oficial, usa el enlace de esa página, registra la fecha ISO, conserva la moneda `MXN` y el estado `verified` solo cuando se cumpla la verificación. No copies imágenes: utiliza una imagen propia/autorizada o el placeholder. Los artículos con precio o disponibilidad no confirmados deben ser `pending_verification`; la importación nunca los convierte automáticamente en verificados.
 
 ### Importación manual

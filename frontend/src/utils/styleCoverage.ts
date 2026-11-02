@@ -20,10 +20,16 @@ const key = (value: string, category: StyleCategory) => {
   return (category === 'fashion' ? fashionAliases : homeAliases)[normalized] ?? normalized;
 };
 
+const hasRecommendableImage = (product: CatalogProduct) => {
+  if (/\.svg(?:$|\?)/i.test(product.image) || /placeholder/i.test(product.image)) return false;
+  if (product.imageMetadata?.kind === 'svg_illustration') return false;
+  return product.verificationStatus !== 'demo' || product.imageMetadata?.kind === 'exact_product';
+};
+
 export function stylesWithCoverage(products: CatalogProduct[], category: StyleCategory): string[] {
   const coverage = new Map<string, Set<string>>();
   for (const product of products) {
-    if (product.activeForRecommendations === false || product.category !== category || product.price === null) continue;
+    if (!hasRecommendableImage(product) || product.activeForRecommendations === false || product.category !== category || product.price === null) continue;
     if (product.verificationStatus !== 'demo' && !(product.available === true && product.availabilityVerified)) continue;
     for (const style of product.styles) {
       const styleKey = key(style, category);

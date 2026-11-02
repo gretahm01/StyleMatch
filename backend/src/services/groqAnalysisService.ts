@@ -5,6 +5,7 @@ import { AnalysisProviderError } from './analysisProviderError.js';
 interface GroqClient { chat: { completions: { create: (request: unknown) => Promise<{ choices?: Array<{ message?: { content?: string | null } }> }> } }; }
 interface GroqOptions { apiKey: string; model: string; client?: GroqClient; }
 interface ErrorFacts { statuses: number[]; codes: string[]; names: string[]; messages: string[]; }
+type GroqDiagnosticHint = 'quota' | 'authentication' | 'model' | 'structured_output' | 'configuration' | 'service' | 'timeout' | 'network' | 'unknown';
 const GROQ_BASE_URL = 'https://api.groq.com/openai/v1';
 
 function collectErrorFacts(error: unknown): ErrorFacts {
@@ -24,15 +25,42 @@ function collectErrorFacts(error: unknown): ErrorFacts {
   visit(error); return facts;
 }
 
+function diagnosticHint(facts: ErrorFacts): GroqDiagnosticHint {
+  const code = facts.codes.join(' '); const message = facts.messages.join(' '); const names = facts.names.join(' ');
+  const hasStatus = (...statuses: number[]) => facts.statuses.some((status) => statuses.includes(status));
+  if (hasStatus(429) || /RESOURCE_EXHAUSTED|RATE_LIMIT|QUOTA/i.test(code)) return 'quota';
+  if (hasStatus(401, 403) || /UNAUTHENTICATED|PERMISSION_DENIED/i.test(code)) return 'authentication';
+  if (hasStatus(404) || /MODEL_NOT_FOUND|MODEL_DEPRECATED|NOT_FOUND/i.test(code) || /model.*(not found|not available|unsupported|deprecat)/i.test(message)) return 'model';
+  if (/JSON.?SCHEMA|RESPONSE.?FORMAT|STRUCTURED.?OUTPUT|SCHEMA.?VALIDATION|ADDITIONAL.?PROPERTIES|REQUIRED.*FIELD/i.test(`${code} ${message}`)) return 'structured_output';
+  if (facts.statuses.some((status) => status >= 500 && status <= 599)) return 'service';
+  if (/TimeoutError|AbortError/.test(names) || /timeout|timed out|ETIMEDOUT/i.test(`${message} ${code}`)) return 'timeout';
+  if (/fetch|network|connection|socket|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN/i.test(`${message} ${code}`)) return 'network';
+  if (hasStatus(400, 422) || /INVALID_ARGUMENT|BAD_REQUEST/i.test(code)) return 'configuration';
+  return 'unknown';
+}
+
+/** Safe metadata for server logs. It intentionally excludes provider messages, prompts, images and credentials. */
+export function getGroqErrorDiagnostic(error: unknown) {
+  const facts = collectErrorFacts(error);
+  const safeToken = (value: string) => /^[A-Za-z0-9_.:-]{1,80}$/.test(value) ? value : undefined;
+  return {
+    hint: diagnosticHint(facts),
+    names: [...new Set(facts.names.map(safeToken).filter((value): value is string => Boolean(value)))],
+    codes: [...new Set(facts.codes.map(safeToken).filter((value): value is string => Boolean(value)))],
+    httpStatuses: [...new Set(facts.statuses)],
+  };
+}
+
 export function classifyGroqError(error: unknown): AnalysisProviderError {
-  const facts = collectErrorFacts(error); const code = facts.codes.join(' '); const message = facts.messages.join(' '); const names = facts.names.join(' '); const hasStatus = (...statuses: number[]) => facts.statuses.some((status) => statuses.includes(status));
-  if (hasStatus(429) || /RESOURCE_EXHAUSTED|RATE_LIMIT/i.test(code)) return new AnalysisProviderError(429, 'Se alcanzó temporalmente el límite de Groq. Intenta más tarde o activa manualmente el modo DEMO.', 'quota');
-  if (hasStatus(401, 403) || /UNAUTHENTICATED|PERMISSION_DENIED/i.test(code)) return new AnalysisProviderError(503, 'Groq rechazó la configuración de acceso del backend. Revisa la clave y los permisos del proyecto.', 'authentication');
-  if (hasStatus(404) || /MODEL_NOT_FOUND|NOT_FOUND/i.test(code)) return new AnalysisProviderError(503, 'El modelo Groq configurado no está disponible para esta clave.', 'model');
-  if (hasStatus(400, 422) || /INVALID_ARGUMENT|BAD_REQUEST/i.test(code)) return new AnalysisProviderError(502, 'Groq rechazó la solicitud del backend. Revisa la configuración, el modelo y el formato de respuesta.', 'configuration');
-  if (facts.statuses.some((status) => status >= 500 && status <= 599)) return new AnalysisProviderError(503, 'Groq presenta un problema temporal de servicio. Intenta nuevamente más tarde o activa el modo DEMO.', 'service');
-  if (/TimeoutError|AbortError/.test(names) || /timeout|timed out|ETIMEDOUT/i.test(`${message} ${code}`)) return new AnalysisProviderError(504, 'Groq tardó demasiado en responder. Intenta nuevamente más tarde o activa el modo DEMO.', 'timeout');
-  if (/fetch|network|connection|socket|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN/i.test(`${message} ${code}`)) return new AnalysisProviderError(503, 'No fue posible conectar con Groq. Verifica la conexión del servidor e inténtalo más tarde.', 'network');
+  const facts = collectErrorFacts(error); const hint = diagnosticHint(facts);
+  if (hint === 'quota') return new AnalysisProviderError(429, 'Se alcanzó temporalmente el límite de Groq. Intenta más tarde o activa manualmente el modo DEMO.', 'quota');
+  if (hint === 'authentication') return new AnalysisProviderError(503, 'Groq rechazó la configuración de acceso del backend. Revisa la clave y los permisos del proyecto.', 'authentication');
+  if (hint === 'model') return new AnalysisProviderError(503, 'El modelo Groq configurado no está disponible para esta clave.', 'model');
+  if (hint === 'structured_output') return new AnalysisProviderError(502, 'Groq rechazó el formato estructurado de la solicitud. Revisa la compatibilidad del modelo y el esquema JSON.', 'json');
+  if (hint === 'configuration') return new AnalysisProviderError(502, 'Groq rechazó la solicitud del backend. Revisa la configuración y el modelo.', 'configuration');
+  if (hint === 'service') return new AnalysisProviderError(503, 'Groq presenta un problema temporal de servicio. Intenta nuevamente más tarde o activa el modo DEMO.', 'service');
+  if (hint === 'timeout') return new AnalysisProviderError(504, 'Groq tardó demasiado en responder. Intenta nuevamente más tarde o activa el modo DEMO.', 'timeout');
+  if (hint === 'network') return new AnalysisProviderError(503, 'No fue posible conectar con Groq. Verifica la conexión del servidor e inténtalo más tarde.', 'network');
   return new AnalysisProviderError(502, 'Groq no pudo completar el análisis. Intenta nuevamente o activa el modo DEMO.', 'unknown');
 }
 
@@ -54,6 +82,8 @@ export async function analyzeWithGroq(input: { buffer: Buffer; mime: string; cat
     return analysis.data;
   } catch (error) {
     if (error instanceof AnalysisProviderError) throw error;
-    throw classifyGroqError(error);
+    const classified = classifyGroqError(error);
+    console.warn(JSON.stringify({ event: 'groq_provider_error_shape', category: classified.category, ...getGroqErrorDiagnostic(error) }));
+    throw classified;
   }
 }

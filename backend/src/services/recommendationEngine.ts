@@ -10,6 +10,17 @@ export interface Recommendation { product: CatalogProduct; score: number; breakd
 export interface RecommendationResult { recommendations: Recommendation[]; reason: string | null; hasMore: boolean; remainingCount: number; }
 export interface RecommendationInput { analysis: ImageAnalysis; profile?: TasteProfile; inferredPreferences?: InferredPreferences; excludedProductIds?: string[]; excludedSubcategories?: string[]; occasion: Occasion; minPrice?: number; maxPrice?: number; /** @deprecated The catalog is always mixed. Retained for compatible internal callers. */ includeDemo?: boolean; audience?: ProductAudience; products: CatalogProduct[]; }
 
+/**
+ * A raster image alone is not enough evidence for a DEMO product: it must be
+ * documented as a local photograph of that exact article. SVGs and placeholders
+ * remain usable as visual fallbacks in the catalog, never as recommendations.
+ */
+export function hasRecommendationImage(product: CatalogProduct): boolean {
+  if (/\.svg(?:$|\?)/i.test(product.image) || /placeholder/i.test(product.image)) return false;
+  if (product.imageMetadata?.kind === 'svg_illustration') return false;
+  return product.verificationStatus !== 'demo' || product.imageMetadata?.kind === 'exact_product';
+}
+
 const equivalentGroups = [
   ['beige', 'crema', 'arena', 'marfil', 'blanco', 'roble'], ['terracota', 'arcilla', 'cobre', 'café', 'cafe', 'chocolate', 'marrón'], ['olivo', 'salvia', 'verde'], ['azul cielo', 'azul marino', 'azul'], ['negro', 'gris claro', 'gris'], ['vino', 'borgoña', 'burgundy', 'morado', 'ciruela'],
   ['minimalista', 'contemporáneo', 'escandinavo', 'nordico'], ['clásico', 'formal', 'old_money', 'elegante'], ['bohemio', 'rústico', 'natural', 'boho'], ['streetwear', 'urbano', 'utilitario'], ['athleisure', 'deportivo'], ['vintage', 'retro'],
@@ -37,7 +48,14 @@ const styleCompatibility: Record<CatalogProduct['category'], string[][]> = {
 type VisualCompatibility = { matchType: RecommendationMatchType; directColors: string[]; directStyles: string[]; directMaterials: string[]; harmonyPairs: string[]; compatibleStyles: string[] };
 const canonicalColor = (value: string) => colorAliases[normalize(value)] ?? normalize(value);
 const sameColor = (left: string, right: string) => canonicalColor(left) === canonicalColor(right);
-const directColorMatches = (left: string[], right: string[]) => left.filter((item) => right.some((other) => sameColor(item, other)));
+const directColorMatches = (left: string[], right: string[]) => {
+  const exact = left.filter((item) => right.some((other) => sameColor(item, other)));
+  // "multicolor" is a catalog color in its own right: it can match only a
+  // photograph where the analysis observed more than one distinct color.
+  const hasMulticolorProduct = left.some((item) => canonicalColor(item) === 'multicolor');
+  const observedColors = new Set(right.map(canonicalColor));
+  return hasMulticolorProduct && observedColors.size > 1 ? [...exact, 'multicolor'] : exact;
+};
 function isColorHarmony(left: string, right: string): boolean {
   const a = canonicalColor(left); const b = canonicalColor(right);
   if (a === b) return false;
@@ -137,7 +155,7 @@ function explanation(product: CatalogProduct, input: RecommendationInput, visual
 
 export function recommendProducts(input: RecommendationInput): RecommendationResult {
   const excludedSubcategories = new Set((input.excludedSubcategories ?? []).map(normalize));
-  const candidates = input.products.filter((product) => product.activeForRecommendations !== false && product.category === input.analysis.category && !input.excludedProductIds?.includes(product.id) && !excludedSubcategories.has(normalize(product.subcategory)) && product.price !== null && (input.minPrice === undefined || product.price >= input.minPrice) && (input.maxPrice === undefined || product.price <= input.maxPrice) && (input.audience === undefined || input.audience === 'unspecified' || product.category !== 'fashion' || product.productAudience === input.audience || product.productAudience === 'unisex') && (product.verificationStatus === 'demo' || (product.available === true && product.availabilityVerified)) && (!input.profile || input.profile.interestCategory === 'both' || input.profile.interestCategory === product.category) && occasionMatches(product, input.occasion).length > 0);
+  const candidates = input.products.filter((product) => hasRecommendationImage(product) && product.activeForRecommendations !== false && product.category === input.analysis.category && !input.excludedProductIds?.includes(product.id) && !excludedSubcategories.has(normalize(product.subcategory)) && product.price !== null && (input.minPrice === undefined || product.price >= input.minPrice) && (input.maxPrice === undefined || product.price <= input.maxPrice) && (input.audience === undefined || input.audience === 'unspecified' || product.category !== 'fashion' || product.productAudience === input.audience || product.productAudience === 'unisex') && (product.verificationStatus === 'demo' || (product.available === true && product.availabilityVerified)) && (!input.profile || input.profile.interestCategory === 'both' || input.profile.interestCategory === product.category) && occasionMatches(product, input.occasion).length > 0);
   const sortRanked = (left: Recommendation, right: Recommendation) => right.breakdown.visualScore - left.breakdown.visualScore || right.score - left.score || Number(right.product.verificationStatus === 'verified') - Number(left.product.verificationStatus === 'verified') || left.product.id.localeCompare(right.product.id);
   const ranked = candidates.flatMap((product) => {
     const visual = visualCompatibility(product, input.analysis);

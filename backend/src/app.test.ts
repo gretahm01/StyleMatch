@@ -168,10 +168,10 @@ describe('catalog integrity', () => {
 
   it('keeps a compact active catalog while preserving inactive records as backup', () => {
     const active = getAllProducts().filter((product) => product.activeForRecommendations);
-    expect(active).toHaveLength(22);
+    expect(active).toHaveLength(23);
     expect(active.filter((product) => product.category === 'fashion').length).toBeGreaterThanOrEqual(12);
     expect(active.filter((product) => product.category === 'home').length).toBeGreaterThanOrEqual(6);
-    expect(getAllProducts().filter((product) => !product.activeForRecommendations)).toHaveLength(32);
+    expect(getAllProducts().filter((product) => !product.activeForRecommendations)).toHaveLength(31);
   });
 
   it('contains unique IDs and all mandatory fields', () => {
@@ -198,6 +198,7 @@ describe('catalog integrity', () => {
   it('validates its schema and keeps DEMO records visibly separate from official stores', () => {
     expect(catalogSchema.safeParse(catalog).success).toBe(true);
     expect(catalog.filter((product) => product.verificationStatus === 'demo').every((product) => product.store === 'StyleMatch Demo' && product.productUrl === null)).toBe(true);
+    expect(getAllProducts().filter((product) => product.verificationStatus === 'demo').every((product) => product.sourceType === 'demo' && product.source.type === 'internal_demo')).toBe(true);
     expect(catalog.filter((product) => product.verificationStatus === 'verified').every((product) => product.store !== 'StyleMatch Demo' && product.productUrl && product.source.url && product.lastVerifiedAt)).toBe(true);
     const invalid = structuredClone(catalog);
     invalid[0] = { ...invalid[0], store: 'H&M México', verificationStatus: 'verified', productUrl: 'https://example.test/item', source: { type: 'official_product_page', url: 'https://example.test/item' }, lastVerifiedAt: '2026-10-27T12:00:00-06:00' };

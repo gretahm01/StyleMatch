@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { analyzeWithGroq, classifyGroqError } from './groqAnalysisService.js';
+import { analyzeWithGroq, classifyGroqError, getGroqErrorDiagnostic } from './groqAnalysisService.js';
 
 const validAnalysis = { category: 'fashion', relevant: true, detectedObject: 'Bolso', primaryColors: ['beige'], secondaryColors: [], style: ['minimalista'], possibleMaterials: ['material probable'], visualDescription: 'Bolso beige.', observedFeatures: ['forma estructurada'], inferences: [], confidenceNotes: [], retryReason: null };
 
@@ -24,5 +24,19 @@ describe('Groq analysis service', () => {
   it('classifies provider errors with a safe message', () => {
     const error = classifyGroqError({ response: { status: 503 }, message: 'internal provider detail' });
     expect(error).toMatchObject({ status: 503, category: 'service', message: expect.not.stringContaining('internal provider detail') });
+  });
+
+  it('distinguishes structured-output rejections without exposing a provider message', () => {
+    const raw = 'schema requires additionalProperties false and must not reach the UI';
+    const error = classifyGroqError({ response: { status: 400 }, code: 'JSON_SCHEMA_INVALID', message: raw });
+    expect(error).toMatchObject({ status: 502, category: 'json', message: expect.stringContaining('formato estructurado') });
+    expect(error.message).not.toContain(raw);
+    expect(getGroqErrorDiagnostic({ response: { status: 400 }, code: 'JSON_SCHEMA_INVALID', message: raw })).toEqual({ hint: 'structured_output', names: [], codes: ['JSON_SCHEMA_INVALID'], httpStatuses: [400] });
+  });
+
+  it('records only safe metadata for model, quota and temporary provider failures', () => {
+    expect(getGroqErrorDiagnostic({ status: 404, code: 'MODEL_NOT_FOUND', message: 'private provider detail' }).hint).toBe('model');
+    expect(getGroqErrorDiagnostic({ status: 429, code: 'RATE_LIMIT', message: 'private provider detail' }).hint).toBe('quota');
+    expect(getGroqErrorDiagnostic({ response: { status: 503 }, message: 'private provider detail' })).toEqual({ hint: 'service', names: [], codes: [], httpStatuses: [503] });
   });
 });
