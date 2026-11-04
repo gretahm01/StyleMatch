@@ -224,6 +224,21 @@ describe('recommendation engine', () => {
     expect(green.recommendations.every((item) => item.product.occasions.includes('party'))).toBe(true);
     expect(orange.recommendations.every((item) => item.product.occasions.includes('party'))).toBe(true);
   });
+
+  it('uses canonical occasions for the new photographed DEMO products when they are visually compatible', () => {
+    const catalog = getAllProducts();
+    const aretes = catalog.filter((item) => item.id === 'demo-aretes-plateados-001');
+    const flats = catalog.filter((item) => item.id === 'demo-flats-cafe-001');
+    const falda = catalog.filter((item) => item.id === 'demo-falda-blanca-001');
+
+    const party = recommendProducts({ analysis: { ...analysis, detectedObject: 'vestido plateado', primaryColors: ['plateado'], secondaryColors: [], style: ['elegante'], possibleMaterials: [] }, occasion: 'party', audience: 'women', products: aretes });
+    const workFlats = recommendProducts({ analysis: { ...analysis, detectedObject: 'blusa caf\u00e9', primaryColors: ['caf\u00e9'], secondaryColors: [], style: ['cl\u00e1sico'], possibleMaterials: [] }, occasion: 'work', audience: 'women', products: flats });
+    const workSkirt = recommendProducts({ analysis: { ...analysis, detectedObject: 'blusa crema', primaryColors: ['crema'], secondaryColors: [], style: ['elegante'], possibleMaterials: [] }, occasion: 'work', audience: 'women', products: falda });
+
+    expect(party.recommendations.map((item) => item.product.id)).toContain('demo-aretes-plateados-001');
+    expect(workFlats.recommendations.map((item) => item.product.id)).toContain('demo-flats-cafe-001');
+    expect(workSkirt.recommendations.map((item) => item.product.id)).toContain('demo-falda-blanca-001');
+  });
   it('uses only declared bedroom-context objects for a bedroom analysis', () => {
     const result = recommendProducts({ analysis: { ...analysis, category: 'home', detectedObject: 'habitación minimalista', primaryColors: ['morado'], secondaryColors: [], style: ['industrial'], possibleMaterials: [] }, occasion: 'decorate_bedroom', includeDemo: true, products: getAllProducts() });
     const bedroomSubcategories = new Set(['lámparas', 'alfombras', 'cojines', 'cuadros', 'floreros', 'decoraciones']);

@@ -10,7 +10,8 @@ export const catalogProductSchema = z.object({
   category: z.enum(['fashion', 'home']),
   subcategory: z.string().min(1),
   primaryColor: z.string().min(1),
-  secondaryColors: z.array(z.string().min(1)).min(1),
+  // Un producto puede tener únicamente un color visible/documentado.
+  secondaryColors: z.array(z.string().min(1)),
   styles: z.array(z.string().min(1)),
   material: z.string().min(1).nullable(),
   price: z.number().finite().nonnegative().nullable(),

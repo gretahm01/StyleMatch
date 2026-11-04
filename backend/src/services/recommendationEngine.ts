@@ -78,10 +78,10 @@ function visualCompatibility(product: CatalogProduct, analysis: ImageAnalysis): 
 }
 function profileStyles(profile: TasteProfile | undefined, category: CatalogProduct['category']): string[] { if (!profile) return []; const specific = category === 'fashion' ? (profile.fashionStyles ?? []) : (profile.homeStyles ?? []); return specific.length ? specific : profile.preferredStyles; }
 const complementarySubcategories: Record<string, string[]> = {
-  camisa: ['pantalones', 'tenis', 'zapatos', 'bolsos', 'cinturones', 'accesorios', 'chamarras'],
-  blusa: ['pantalones', 'tenis', 'zapatos', 'bolsos', 'cinturones', 'accesorios', 'chamarras'],
+  camisa: ['pantalones', 'falda', 'faldas', 'tenis', 'zapatos', 'flats', 'bolsos', 'cinturones', 'accesorios', 'aretes', 'chamarras'],
+  blusa: ['pantalones', 'falda', 'faldas', 'tenis', 'zapatos', 'flats', 'bolsos', 'cinturones', 'accesorios', 'aretes', 'chamarras'],
   pantalon: ['blusas', 'tenis', 'zapatos', 'bolsos', 'cinturones', 'accesorios', 'chamarras'],
-  vestido: ['tenis', 'zapatos', 'bolsos', 'accesorios', 'chamarras'],
+  vestido: ['tenis', 'zapatos', 'flats', 'bolsos', 'accesorios', 'aretes', 'chamarras'],
   tenis: ['pantalones', 'blusas', 'chamarras', 'bolsos', 'cinturones', 'accesorios'],
   zapato: ['pantalones', 'blusas', 'chamarras', 'bolsos', 'cinturones', 'accesorios'],
   sala: ['lámparas', 'cojines', 'mesas auxiliares', 'cuadros', 'floreros', 'decoraciones', 'alfombras'],

@@ -80,7 +80,7 @@ describe('API base', () => {
     const response = await request(app).get('/api/catalog');
 
     expect(response.status).toBe(200);
-    expect(response.body.products).toHaveLength(54);
+    expect(response.body.products).toHaveLength(58);
   });
 
   it('filters known prices by a valid budget and rejects invalid ranges', async () => {
@@ -159,16 +159,16 @@ describe('API base', () => {
 
 describe('catalog integrity', () => {
   it('keeps DEMO records and adds separately identified verified products', () => {
-    expect(catalog).toHaveLength(54);
-    expect(catalog.filter((product) => product.verificationStatus === 'demo')).toHaveLength(30);
+    expect(catalog).toHaveLength(58);
+    expect(catalog.filter((product) => product.verificationStatus === 'demo')).toHaveLength(34);
     expect(catalog.filter((product) => product.verificationStatus === 'verified')).toHaveLength(24);
-    expect(catalog.filter((product) => product.category === 'fashion')).toHaveLength(30);
+    expect(catalog.filter((product) => product.category === 'fashion')).toHaveLength(34);
     expect(catalog.filter((product) => product.category === 'home')).toHaveLength(24);
   });
 
   it('keeps a compact active catalog while preserving inactive records as backup', () => {
     const active = getAllProducts().filter((product) => product.activeForRecommendations);
-    expect(active).toHaveLength(23);
+    expect(active).toHaveLength(27);
     expect(active.filter((product) => product.category === 'fashion').length).toBeGreaterThanOrEqual(12);
     expect(active.filter((product) => product.category === 'home').length).toBeGreaterThanOrEqual(6);
     expect(getAllProducts().filter((product) => !product.activeForRecommendations)).toHaveLength(31);
@@ -184,7 +184,7 @@ describe('catalog integrity', () => {
       expect(['fashion', 'home']).toContain(product.category);
       expect(product.subcategory).toBeTruthy();
       expect(product.primaryColor).toBeTruthy();
-      expect(product.secondaryColors.length).toBeGreaterThan(0);
+      expect(product.secondaryColors).toBeInstanceOf(Array);
       expect(product.verificationStatus === 'verified' || product.styles.length > 0).toBe(true);
       expect(product.price === null || product.price >= 0).toBe(true);
       expect(product.image).toMatch(/^\/images\/catalog\/.+\.(svg|jpe?g|png|webp)$/);
@@ -216,7 +216,7 @@ describe('catalog integrity', () => {
   });
 
   it('provides the documented catalog query functions', () => {
-    expect(getProductsByCategory('fashion')).toHaveLength(30);
+    expect(getProductsByCategory('fashion')).toHaveLength(34);
     expect(getProductsByColor('terracota').length).toBeGreaterThan(0);
     expect(getProductsByStyle('minimalista').length).toBeGreaterThan(0);
     expect(getProductsByMaterial('cerámica').length).toBeGreaterThan(0);
